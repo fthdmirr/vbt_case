@@ -5,11 +5,12 @@ import 'package:vbt_case/config/theme/app_theme/IAppTheme.dart';
 import 'constants/app_constants.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key, required this.appRouter,required this.appTheme}) : super(key: key);
+  const App({Key? key, required this.appRouter, required this.appTheme})
+      : super(key: key);
 
   final IAppRouter appRouter;
   final IAppTheme appTheme;
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
