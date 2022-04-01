@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vbt_case/config/navigation/app_router_impl.dart';
-import 'package:vbt_case/config/theme/app_theme/IAppTheme.dart';
+import 'config/navigation/app_router_impl.dart';
+import 'config/theme/app_theme/IAppTheme.dart';
 
 import 'constants/app_constants.dart';
 
