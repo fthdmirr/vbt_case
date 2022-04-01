@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vbt_case/config/theme/text/IAppTextTheme.dart';
+
+import 'IAppTextTheme.dart';
 
 class AppTextTheme extends IAppTextTheme {
   @override

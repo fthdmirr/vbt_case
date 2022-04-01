@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vbt_case/helpers/extensions/context_extensions.dart';
+
+import '../extensions/context_extensions.dart';
 
 class CustomImageAsset extends StatelessWidget {
   const CustomImageAsset({

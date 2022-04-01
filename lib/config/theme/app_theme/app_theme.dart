@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vbt_case/config/theme/app_theme/IAppTheme.dart';
-import 'package:vbt_case/config/theme/colors/app_colors.dart';
-import 'package:vbt_case/config/theme/text/IAppTextTheme.dart';
+import 'IAppTheme.dart';
+import '../colors/app_colors.dart';
+import '../text/IAppTextTheme.dart';
 
 class NormalTheme extends IAppTheme {
   NormalTheme({required bool isDark, required IAppTextTheme appTextTheme})

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vbt_case/config/theme/text/IAppTextTheme.dart';
+import '../text/IAppTextTheme.dart';
 
 
 abstract class IAppTheme {
