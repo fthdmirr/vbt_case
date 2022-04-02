@@ -12,9 +12,14 @@ class TimerText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('$duration',
-        style: context.textTheme.headline3?.copyWith(
-          fontWeight: FontWeight.bold,
-        ));
+    return SizedBox(
+      width: context.dynamicWidth(10),
+      child: Center(
+        child: Text('$duration',
+            style: context.textTheme.headline3?.copyWith(
+              fontWeight: FontWeight.bold,
+            )),
+      ),
+    );
   }
 }

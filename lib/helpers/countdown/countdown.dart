@@ -1,4 +1,4 @@
-import 'package:vbt_case/helpers/countdown/ICountDown.dart';
+import 'ICountDown.dart';
 
 class CountDown extends ICountDown {
   CountDown(int duration) : super(duration);

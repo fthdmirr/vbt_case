@@ -1,7 +1,7 @@
 part of '../game_view.dart';
 
-class _UserImageAndNameTextColumnWidget extends StatelessWidget {
-  const _UserImageAndNameTextColumnWidget({
+class UserImageAndNameTextColumnWidget extends StatelessWidget {
+  const UserImageAndNameTextColumnWidget({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -11,11 +11,12 @@ class _UserImageAndNameTextColumnWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
+        context.lowSizedBox,
         CustomImageAsset(imagePath: user.image),
-        Text(user.name, style: context.textTheme.bodyText1),
+        CustomImageTitleWidget(name: user.name),
       ],
     );
   }
 }
+

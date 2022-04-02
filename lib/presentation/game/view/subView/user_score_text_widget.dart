@@ -1,7 +1,7 @@
 part of '../game_view.dart';
 
-class _UserScoreTextWidget extends StatelessWidget {
-  const _UserScoreTextWidget({
+class UserScoreTextWidget extends StatelessWidget {
+  const UserScoreTextWidget({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -12,6 +12,6 @@ class _UserScoreTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text('${user.score}',
         style: context.textTheme.headline6
-            ?.copyWith(color: Colors.white, fontWeight: FontWeight.w400));
+            ?.copyWith(color: Colors.white, fontWeight: FontWeight.w600));
   }
 }
