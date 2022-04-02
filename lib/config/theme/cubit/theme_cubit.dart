@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
-import '../app_theme/app_theme.dart';
+import '../app_theme/green_app_theme.dart';
+import '../app_theme/red_app_theme.dart';
 import '../text/app_text_theme.dart';
 
 part 'theme_state.dart';

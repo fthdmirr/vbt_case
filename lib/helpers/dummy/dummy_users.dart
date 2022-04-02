@@ -7,7 +7,7 @@ class DummyUsers {
 
    DummyUsers._init();
 
-   final user1 = User('Fatih', 'user1'.toJpg, 75);
-   final user2 = User('Demir', 'user2'.toJpg, 50);
+   final user1 = User('Fatih', 'user1'.toPng, 75);
+   final user2 = User('Demir', 'user2'.toPng, 50);
 
 }
