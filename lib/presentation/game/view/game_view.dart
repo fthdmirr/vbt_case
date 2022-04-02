@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:vbt_case/config/theme/cubit/theme_cubit.dart';
+
 import '../../../helpers/dummy/dummy_strings.dart';
 import '../../../helpers/dummy/dummy_users.dart';
 import '../../../helpers/extensions/context_extensions.dart';
 import '../../../helpers/widgets/custom_alert_dialog.dart';
-import '../view_model/drop_down_provider/drop_down_provider.dart';
-
-import '../../../config/theme/colors/app_colors.dart';
 import '../../../helpers/widgets/custom_image_asset.dart';
 import '../model/user_model.dart';
+import '../view_model/drop_down_provider/drop_down_provider.dart';
 import '../view_model/game_cubit/game_cubit.dart';
 
 part './subView/user_image_name_text_column_widget.dart';
@@ -40,14 +40,13 @@ class GameView extends StatelessWidget {
 
   IconButton _infoIconButtonLeadingWidget(BuildContext context) {
     return IconButton(
-          onPressed: () => showDialog(
-              context: context,
-              builder: (context) => CustomAlertDialog(
-                  title: 'Info',
-                  content: DummyStrings.instance.veryLongString)),
-          icon: const Icon(Icons.info),
-          iconSize: context.dynamicHeight(3.25),
-        );
+      onPressed: () => showDialog(
+          context: context,
+          builder: (context) => CustomAlertDialog(
+              title: 'Info', content: DummyStrings.instance.veryLongString)),
+      icon: const Icon(Icons.info),
+      iconSize: context.dynamicHeight(3.25),
+    );
   }
 
   Widget _flexibleSpaceTimerAndUserWidgets(BuildContext context) {
@@ -61,9 +60,14 @@ class GameView extends StatelessWidget {
             _UserImageAndNameTextColumnWidget(user: DummyUsers.instance.user1),
             _UserScoreTextWidget(user: DummyUsers.instance.user1),
             context.lowSizedBoxWidth,
-            BlocBuilder<GameCubit, GameState>(
+            BlocConsumer<GameCubit, GameState>(
+              listener: (context, state) {
+                if (state.duration == 5) {
+                  context.read<ThemeCubit>().changeTheme();
+                }
+              },
               builder: (context, state) {
-                return _timerTextConditions(state);
+                return TimerText(duration: state.duration);
               },
             ),
             context.lowSizedBoxWidth,
@@ -73,17 +77,5 @@ class GameView extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  TimerText _timerTextConditions(GameState state) {
-    if (state is GameStarted) {
-      return const TimerText(duration: 15);
-    } else if (state is GameRunning) {
-      return TimerText(
-          duration: state.duration,
-          color: state.duration < 6 ? Colors.red : null);
-    } else {
-      return const TimerText(duration: 0, color: Colors.red);
-    }
   }
 }

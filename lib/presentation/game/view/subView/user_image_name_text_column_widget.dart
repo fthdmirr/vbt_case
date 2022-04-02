@@ -14,11 +14,7 @@ class _UserImageAndNameTextColumnWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         CustomImageAsset(imagePath: user.image),
-        Text(
-          user.name,
-          style: context.textTheme.bodyText1
-              ?.copyWith(color: AppColors.winterCocoa),
-        ),
+        Text(user.name, style: context.textTheme.bodyText1),
       ],
     );
   }

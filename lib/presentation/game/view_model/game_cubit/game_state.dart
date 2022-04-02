@@ -1,22 +1,19 @@
 part of 'game_cubit.dart';
 
-abstract class GameState extends Equatable {
-  const GameState();
+class GameState extends Equatable {
+  final int duration;
+  const GameState({required this.duration});
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [duration];
+
+  GameState copyWith({
+    int? duration,
+    bool? changeTheme,
+  }) {
+    return GameState(
+      duration: duration ?? this.duration
+    );
+  }
 }
 
-class GameStarted extends GameState {
-  const GameStarted();
-}
-
-class GameRunning extends GameState {
-  final int duration;
-
-  const GameRunning(this.duration);
-}
-
-class _GameTimeChange extends GameState {}
-
-class GameComplated extends GameState {}

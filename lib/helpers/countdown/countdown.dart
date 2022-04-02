@@ -1,10 +1,11 @@
-class CountDown {
-  CountDown(this.seconds);
+import 'package:vbt_case/helpers/countdown/ICountDown.dart';
 
-  final int seconds;
+class CountDown extends ICountDown {
+  CountDown(int duration) : super(duration);
 
+  @override
   Stream<int> get startTimer => Stream<int>.periodic(
         const Duration(seconds: 1),
-        (x) => seconds - x,
+        (x) => duration - x,
       );
 }
